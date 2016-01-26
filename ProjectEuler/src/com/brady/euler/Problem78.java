@@ -5,7 +5,7 @@ public class Problem78 extends Problem {
 	
 	private int[] p = new int[65536];
 	
-	public int solve() {
+	public long solve() {
 		p[0] = 1;
 		for (int i = 1; i < 65536; i++) {
 			if (partition(i) == 0) {

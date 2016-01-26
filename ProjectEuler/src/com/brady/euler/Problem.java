@@ -5,7 +5,8 @@ import java.util.Scanner;
 
 public abstract class Problem {
 	
-	public int solve() {
+	
+	public long solve() {
 		throw new UnsupportedOperationException("Not implemented");
 	}
 	

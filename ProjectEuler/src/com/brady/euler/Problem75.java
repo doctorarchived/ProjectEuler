@@ -8,7 +8,7 @@ public class Problem75 extends Problem {
 	final int[] count = new int[L+1];
 	
 	@Override
-	public int solve() {
+	public long solve() {
 				
 		farey(2048); //2048 is more than enough for euclid's formula since 2048^2 + 1 > L
 		

@@ -1,0 +1,107 @@
+
+Case 0 : No cars
+
+Expected : 0
+
+
+Case 1 : Car enters and exits at same time
+
+ENTER 350
+EXIT 350
+
+Expected : 0
+
+Case 2 : Car enters and exits for nonzero time
+
+ENTER 350
+EXIT 450
+
+Expected : 1
+
+Case 3 : Cars enter and exit with no overlap
+
+ENTER 100
+EXIT 200
+ENTER 0
+EXIT 100
+ENTER 400
+EXIT 500
+ENTER 200
+EXIT 400
+
+Expected : 1
+
+Case 4 : Cars enter and exit with one instance of overlap
+
+ENTER 100
+EXIT 200
+ENTER 0
+EXIT 150
+ENTER 400
+EXIT 500
+ENTER 200
+EXIT 400
+
+Expected : 2
+
+Case 5 : Cars enter and exit with multiple instances of equal overlap
+
+ENTER 100
+EXIT 200
+ENTER 0
+EXIT 150
+ENTER 400
+EXIT 500
+ENTER 150
+EXIT 400
+
+Expected : 2
+
+Case 6 : Cars enter and exit with multiple instances of different overlap #1
+
+ENTER 100
+EXIT 200
+ENTER 0
+EXIT 150
+ENTER 400
+EXIT 500
+ENTER 150
+EXIT 400
+ENTER 50
+EXIT 175
+
+Expected : 3
+
+Case 7 : Cars enter and exit with multiple instances of different overlap #2 
+
+ENTER 0
+EXIT 500
+ENTER 50
+EXIT 450
+ENTER 100
+EXIT 400
+ENTER 150
+EXIT 350
+ENTER 200
+EXIT 300
+
+Expected : 5
+
+Case 8 : Cars enter and exit with multiple instances of different overlap #3 
+
+ENTER 0
+EXIT 300
+ENTER 50
+EXIT 250
+ENTER 100
+EXIT 200
+ENTER 300
+EXIT 700
+ENTER 350
+EXIT 650
+ENTER 400
+EXIT 600
+ENTER 450
+EXIT 550
+
+Expected : 4

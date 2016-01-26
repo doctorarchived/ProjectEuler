@@ -13,7 +13,9 @@ public class Solver {
 		//Problem.solve(Problem75.class);
 		//Problem.solve(Problem96.class, new File("./p096_sudoku.txt"));
 		//Problem.solve(Problem104.class);
-		Problem.solve(Problem78.class);
+		//Problem.solve(Problem78.class);
+		Problem.solve(Problem100.class);
+
 	}
 	
 	

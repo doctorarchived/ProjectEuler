@@ -3,7 +3,7 @@ package com.brady.euler;
 public class Problem104 extends Problem {	
 	
 	@Override
-	public int solve() {
+	public long solve() {
 		int fPrev = 1, f = 1;
 		for (int i = 3; i < 1000000; i++) {
 			int t = f;
