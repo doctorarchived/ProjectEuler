@@ -1,24 +1,17 @@
 package com.brady.euler;
 
-import java.math.BigInteger;
-
 public class Problem100 extends Problem {
 
 	public long solve() {
 		
-		long discs = 0;
 		long blues = 0;
 		int i = 1;
-		while ((discs = countDiscs(i)) < 1E12) {
+		while (countDiscs(i) < 1E12) {
 			blues = countBlues(i);
-			System.out.println(blues + " / " + discs);
 			i++;
 		}
 		blues = countBlues(i);
-		
-		System.out.println(blues + " / " + discs);
-		
-		
+				
 		return blues;
 		
 	}
