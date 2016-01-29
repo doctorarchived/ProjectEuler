@@ -15,7 +15,7 @@ public class Problem91 extends Problem {
 						int[] a1 = new int[]{x2,y2};
 						int[] a2 = new int[]{x1 - x2, y1 - y2};
 						
-						if (isPerpendicular(a1,a2) || isPerpendicular(a2,a3) || isPerpendicular(a3,a1)) {
+						if (EulerUtils.isPerpendicular(a1,a2) || EulerUtils.isPerpendicular(a2,a3) || EulerUtils.isPerpendicular(a3,a1)) {
 							count++;
 						}	
 					}
@@ -26,8 +26,5 @@ public class Problem91 extends Problem {
 		}
 		return count;
 	}
-	
-	private boolean isPerpendicular(int[] a1, int[] a2) {
-		return a1[0]*a2[0] + a1[1]*a2[1] == 0;
-	}
+
 }
