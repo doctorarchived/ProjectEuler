@@ -25,5 +25,17 @@ public class EulerUtils {
 	public static boolean isPerpendicular(int[] a1, int[] a2) {
 		return a1[0]*a2[0] + a1[1]*a2[1] == 0;
 	}
+	
+	public static boolean isPandigital(int n) {
+        int digits = 0; int count = 0;
+
+        for (; n > 0; n /= 10, count++) {
+            if (digits == (digits |= 1 << (n - ((n / 10) * 10) - 1))) {
+                return false;
+            }
+        }
+
+        return digits == (1 << count) - 1;
+    }
 
 }

@@ -9,7 +9,7 @@ public class Problem104 extends Problem {
 			int t = f;
 			f = (fPrev + f)  % 1000000000;
 			fPrev = t;
-			if (isPandigital(first9Digits(i)) && isPandigital(f)) {
+			if (EulerUtils.isPandigital(first9Digits(i)) && EulerUtils.isPandigital(f)) {
 				return i;
 			}	
 		}
@@ -21,17 +21,6 @@ public class Problem104 extends Problem {
 		return (int) Math.pow(10, digits - (int) digits + 9 - 1);
 	}
 	
-	private boolean isPandigital(int n) {
-        int digits = 0; int count = 0;
-
-        for (; n > 0; n /= 10, count++) {
-            if (digits == (digits |= 1 << (n - ((n / 10) * 10) - 1))) {
-                return false;
-            }
-        }
-
-        return digits == (1 << count) - 1;
-    }
 
 	
 	
