@@ -15,17 +15,23 @@ public abstract class Problem {
 	}
 	
 	public static <T extends Problem> void solve(Class<T> problem) {
-		try {
-			System.out.println(problem.getName() + " " + problem.newInstance().solve());
-		} catch (InstantiationException | IllegalAccessException e) {
-			e.printStackTrace();
-		}
+		solve(problem, null);
 	}
 	
 	public static <T extends Problem> void solve(Class<T> problem, File f) {
 		try {
-			Scanner in = new Scanner(f);
-			System.out.println(problem.getName() + " " + problem.newInstance().solve(in));
+			long timeStamp, result;
+			if (f != null) {
+				Scanner in = new Scanner(f);
+				timeStamp = System.currentTimeMillis();
+				result = problem.newInstance().solve(in);
+			} else {
+				timeStamp = System.currentTimeMillis();
+				result = problem.newInstance().solve();
+			}
+			timeStamp = System.currentTimeMillis() - timeStamp;
+			System.out.println("Solved " + problem.getName() + " with result " + result + " in " + timeStamp + "ms");
+
 		} catch (FileNotFoundException | InstantiationException | IllegalAccessException e) {
 			e.printStackTrace();
 		}
