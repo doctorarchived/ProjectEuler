@@ -18,7 +18,8 @@ public class Solver {
 		//Problem.solve(Problem205.class);
 		//Problem.solve(Problem91.class);
 		//Problem.solve(Problem124.class);
-		Problem.solve(Problem120.class);
+		//Problem.solve(Problem120.class);
+		Problem.solve(Problem125.class);
 
 
 

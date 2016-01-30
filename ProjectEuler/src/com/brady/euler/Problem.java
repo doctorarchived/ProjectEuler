@@ -30,7 +30,7 @@ public abstract class Problem {
 				result = problem.newInstance().solve();
 			}
 			timeStamp = System.currentTimeMillis() - timeStamp;
-			System.out.println("Solved " + problem.getName() + " with result " + result + " in " + timeStamp + "ms");
+			System.out.println("Solved " + problem.getSimpleName() + " with result " + result + " in " + timeStamp + "ms");
 
 		} catch (FileNotFoundException | InstantiationException | IllegalAccessException e) {
 			e.printStackTrace();
