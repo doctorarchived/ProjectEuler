@@ -1,12 +1,8 @@
 package com.brady.euler;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Map.Entry;
-import java.util.TreeMap;
 
 public class Problem95 extends Problem {
 	
