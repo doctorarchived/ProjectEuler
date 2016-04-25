@@ -1,9 +1,4 @@
 import scala.collection.immutable.BitSet
-import scala.collection.mutable.HashMap
-import scala.collection.mutable.HashSet
-import scala.collection.immutable.Queue
-import scala.collection.mutable.TreeSet
-import scala.collection.mutable.MutableList
 
 /*
  * First we need to enumerate {a0,a1,a2,a3,a4,a5} and {b0,b1,b2,b3,b4,b5} while ignoring symmetry and only considering ordered sets
