@@ -23,7 +23,7 @@ import com.google.common.collect.Sets;
 public class Problem93 extends Problem {
 
     // Since we only care about "digits", we only want to check 1 to 9.
-    private final int max = 10;
+    private final int max = 9;
 
     public long solve() {
         Four[] fours = new Four[max];
