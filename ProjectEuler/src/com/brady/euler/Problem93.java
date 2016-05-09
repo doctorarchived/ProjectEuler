@@ -70,16 +70,16 @@ public class Problem93 extends Problem {
 
     Map<Four, TreeSet<Double>> history = new HashMap<>();
 
-    private void magic(Collection<Four> seen, int size) {
-        Set<Four> seen2 = new HashSet<>();
-        Map<Four, TreeSet<Double>> newFours = new HashMap<>();
-        for (Four f1 : seen) {
-            for (Four f2 : seen) {
+    private void magic(Collection<Four> tuples, int size) {
+        Set<Four> newTuples = new HashSet<>();
+        Map<Four, TreeSet<Double>> addToHistory = new HashMap<>();
+        for (Four f1 : tuples) {
+            for (Four f2 : tuples) {
                 if (f1.valid(f2, size)) {
                     Four fNew = f1.add(f2);
                     if (!history.containsKey(fNew)) {
-                        newFours.putIfAbsent(fNew, new TreeSet<>());
-                        TreeSet<Double> set = newFours.get(fNew);
+                        addToHistory.putIfAbsent(fNew, new TreeSet<>());
+                        TreeSet<Double> set = addToHistory.get(fNew);
                         for (double v1 : history.get(f1)) {
                             for (double v2 : history.get(f2)) {
                                 set.add(v1 + v2);
@@ -89,14 +89,14 @@ public class Problem93 extends Problem {
                             }
                         }
                     }
-                    seen2.add(fNew);
+                    newTuples.add(fNew);
                 }
             }
         }
-        history.putAll(newFours);
-        if (!seen2.isEmpty() && size < 4) {
-            seen2.addAll(seen);
-            magic(seen2, ++size);
+        history.putAll(addToHistory);
+        if (!newTuples.isEmpty()) {
+            newTuples.addAll(tuples);
+            magic(newTuples, ++size);
         }
 
     }
