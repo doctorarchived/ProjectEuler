@@ -7,6 +7,7 @@ import java.util.OptionalInt;
 import java.util.Scanner;
 
 import com.google.common.collect.ArrayListMultimap;
+import com.google.common.collect.HashMultimap;
 import com.google.common.collect.Multimap;
 
 public class Problem98 extends Problem {
@@ -15,11 +16,10 @@ public class Problem98 extends Problem {
         in.useDelimiter("\",?\"?");
         int maxLength = 0;
         Multimap<String, String> stringAnagrams = ArrayListMultimap.create();
-        Multimap<String, String> patterns = ArrayListMultimap.create();
         Multimap<String, String> stringAnagramPatterns = ArrayListMultimap.create();
 
         Multimap<String, String> squareAnagrams = ArrayListMultimap.create();
-        Multimap<String, String> squareAnagramPatterns = ArrayListMultimap.create();
+        Multimap<String, String> squareAnagramPatterns = HashMultimap.create();
         Multimap<String, String> squarePatterns = ArrayListMultimap.create();
 
 
@@ -27,7 +27,6 @@ public class Problem98 extends Problem {
         while (in.hasNext()) {
             String i = in.next();
 
-            patterns.put(indicize(i), i);
             for (String anagram : stringAnagrams.get(sort(i))) {
                 stringAnagramPatterns.put(i, s2(i, anagram));
                 stringAnagramPatterns.put(anagram, s2(anagram, i));
@@ -88,7 +87,7 @@ public class Problem98 extends Problem {
 
 
     /**
-     * Given a string s, replace each character with the index of its first occurence in the string
+     * Given a string s, replace each character with the index of its first occurrence in the string
      * s
      * 
      * @param s
@@ -110,7 +109,7 @@ public class Problem98 extends Problem {
     }
 
     /**
-     * Given a string 's', replace each character with the index of its first occurence in the
+     * Given a string 's', replace each character with the index of its first occurrence in the
      * string 'base'
      * 
      * @param s
